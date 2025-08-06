@@ -185,15 +185,27 @@
     14      1      2      4      9   180.00   0.00000   2 ;    H14-   C01-   C02-   N04
     16      6      7     17      9   180.00  15.16700   2 ;    H16-   C06-   C07-   H17
     19     10     11     20      9   180.00  15.16700   2 ;    H19-   C10-   C11-   H20
+     1      4      2      3      9   180.00  43.93200   2 ;    C01-   N04-   C02-   O03
+     2      5      4     15      9   180.00   4.60240   2 ;    C02-   C05-   N04-   H15
+     5      7      6     16      9   180.00   4.60240   2 ;    C05-   C07-   C06-   H16
+     5     10     11     20      9   180.00   4.60240   2 ;    C05-   C10-   C11-   H20
+     6      8      7     17      9   180.00   4.60240   2 ;    C06-   C08-   C07-   H17
+     6     11      5      4      9   180.00   4.60240   2 ;    C06-   C11-   C05-   N04
+     7     10      8      9      9   180.00   4.60240   2 ;    C07-   C10-   C08-   O09
+     8     11     10     19      9   180.00   4.60240   2 ;    C08-   C11-   C10-   H19
+
 
 [ dihedrals ] ; impropers
-; treated as propers in GROMACS to use correct AMBER analytical function
-;    i      j      k      l   func   phase     kd      pn
-     1      4      2      3      4   180.00  43.93200   2 ;    C01-   N04-   C02-   O03
-     2      5      4     15      4   180.00   4.60240   2 ;    C02-   C05-   N04-   H15
-     5      7      6     16      4   180.00   4.60240   2 ;    C05-   C07-   C06-   H16
-     5     10     11     20      4   180.00   4.60240   2 ;    C05-   C10-   C11-   H20
-     6      8      7     17      4   180.00   4.60240   2 ;    C06-   C08-   C07-   H17
-     6     11      5      4      4   180.00   4.60240   2 ;    C06-   C11-   C05-   N04
-     7     10      8      9      4   180.00   4.60240   2 ;    C07-   C10-   C08-   O09
-     8     11     10     19      4   180.00   4.60240   2 ;    C08-   C11-   C10-   H19
+; There is no type 2 improper item in the force field.
+; The bellowing improper items have no contribution to total energy for the zero kd value.
+; The items are added here only to avoid the error in the force filed fitting for error by no
+; impropers item
+;    i      j      k      l   func   phase     kd   
+     1      4      2      3     2   0.0  0.0000001   ;    C01-   N04-   C02-   O03
+     2      5      4     15     2   0.0  0.0000001   ;    C02-   C05-   N04-   H15
+     5      7      6     16     2   0.0  0.0000001   ;    C05-   C07-   C06-   H16
+     5     10     11     20     2   0.0  0.0000001   ;    C05-   C10-   C11-   H20
+     6      8      7     17     2   0.0  0.0000001   ;    C06-   C08-   C07-   H17
+     6     11      5      4     2   0.0  0.0000001   ;    C06-   C11-   C05-   N04
+     7     10      8      9     2   0.0  0.0000001   ;    C07-   C10-   C08-   O09
+     8     11     10     19     2   0.0  0.0000001   ;    C08-   C11-   C10-   H19
